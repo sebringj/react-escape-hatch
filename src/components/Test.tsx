@@ -65,14 +65,11 @@ export const Test: FC<TestProps> = ({ name, counterChange, user, onCounterClick 
 
     return (
         <>
-            {/* NOTE: common style is used here as an example of style reuse */}
             <CommonStyle />
-            {/* list your specific style after so you can override common style if you need */}
             <TestStyle />
 
             <div className="container">
-                <div>hi there {name}</div>
-                <div className="title">{name}</div>
+                <div className="title">hi there {name}</div>
                 {user ? <div>user: {user.username}</div> : undefined}
                 <button onClick={onClick}>count++: {count}</button>
             </div>

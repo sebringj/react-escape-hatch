@@ -5,18 +5,17 @@ import { defineWebComponent } from '../lib/defineWebComponent';
  *
  * The goal of this is to decouple the react components from web components.
  *
- * Placing web component logic inside your react component will defeat this purpose and will
- * prevent a smooth migration to react-only apps.
+ * Placing web component logic inside your react component will defeat this purpose
  */
 
 // import the react component
 import { TestRef, Test } from '../components/Test'
 
-export const defineBkTest = () => {
+export const defineTest = () => {
     // wrap the react component with a web component
     defineWebComponent({
         // the web component tag name
-        tagName: 'bk-test',
+        tagName: 'test-component',
 
         // declare webcomponent value-based attributes that correspond to react component (omit callbacks)
         // note that all inputs are strings by limitation of web components
