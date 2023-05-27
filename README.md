@@ -1,5 +1,5 @@
 # React Escape Hatch
-Project to create react components as Web Components to be compatible with older or newer frameworks depending on your goal is to support react implementations on other web frameworks outside of react but want to reuse your code.
+Project to create react components as Web Components to be compatible with different web frameworks.
 
 The design goal is to create a clean seperation between plain react components and then being able to wrap them as web components without compromising functionality.
 
