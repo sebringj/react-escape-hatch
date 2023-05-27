@@ -9,7 +9,7 @@ The initial goal of this was to allow an old angular 1 app to use new react comp
 See index.html source for example usage.
 
 ## Usage with Vite
-Vite is a modern way to package up your app and provides a clean way to build the project and product a script file.
+Vite is a modern way to package up your app and provides a clean way to build the project and produce a script file.
 
 ## Webcomponent Compatibility and React
 - Suports arguments as strings but can optionally provide a conversion method for an attribute
