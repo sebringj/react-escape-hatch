@@ -1,4 +1,7 @@
 # React Escape Hatch
+
+This is a project-starter to develop react components from and then to expose them as web components.
+
 <img src="https://media.gettyimages.com/id/sb10063651h-001/vector/ladder-through-escape-hatch.jpg?s=1024x1024&w=gi&k=20&c=lDFWFwkSPY8qqcUiqKSkguGKZsR5EnGNKEuZ0eDNwRw=" style="width:100px;height:auto;">
 Project to create react components as Web Components to be compatible with different web frameworks.
 
