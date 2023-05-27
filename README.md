@@ -27,6 +27,9 @@ The unique nature of web components requires being compatible with shadow dom.
 2. run `yarn`
 3. run `yarn dev`
 
+## To get build preview
+1. run `yarn preview`
+
 ## Integrating with env
 - In dev environment place on your consuming web page, add a script tag to your running server
 ```html
@@ -40,6 +43,3 @@ The unique nature of web components requires being compatible with shadow dom.
   ```html
     <script type="module" src="http://my-cdn/built-script.js"></script>
   ```
-
-## To get build preview
-1. run `yarn preview`
