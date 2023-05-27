@@ -5,6 +5,14 @@ This is a project-starter to develop react components from and then to expose th
 <img src="https://media.gettyimages.com/id/sb10063651h-001/vector/ladder-through-escape-hatch.jpg?s=1024x1024&w=gi&k=20&c=lDFWFwkSPY8qqcUiqKSkguGKZsR5EnGNKEuZ0eDNwRw=" style="width:100px;height:auto;">
 Project to create react components as Web Components to be compatible with different web frameworks.
 
+Basic principles (AKA IMO why this is better than other approaches):
+
+1. ensure your react component does not need to know anything about web components
+2. ensure web components behave as if they were built around pure web programming, not react
+3. expose react callbacks as web component events
+4. allow only simple string attributes but can optionally provide a convert method per attribute
+5. expose `myElement.ref.current` automatically via dom node access when your component is a `forward_ref` type
+
 The design goal is to create a clean seperation between plain react components and then being able to wrap them as web components without compromising functionality.
 
 The initial goal of this was to allow an old angular 1 app to use new react components and this currently supports react created as functional components only.
