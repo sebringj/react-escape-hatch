@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- NOTE: all inputs must be strings but can handle string conversion to type when defined -->
+    <bk-test id="bkTest1" name="Jane" user='{ "username": "jane123" }'></bk-test>
+    <button id="changeNameBtn">change name</button>
+    <button id="resetCountBtn">reset count</button>
+
+    <div style="margin-bottom: 20px"></div>
+    <bk-test id="bkTest2" name="Jason" user='{ "username": "Jason123" }'></bk-test>
+    <button id="changeNameBtn2">change name</button>
+    <button id="resetCountBtn2">reset count</button>
+    <script>
+      /*
+        NOTE: angular would use this exactly the same
+      */
+      const bkTest = document.getElementById('bkTest1')
+      const bkTest2 = document.getElementById('bkTest2')
+
+      const names = ['Bob', 'Joe', 'Jane', 'Lou', 'Katie', 'Andrea', 'Mason', 'Jason', 'Angela', 'John', 'Bill', 'Laury', 'Tanya', 'Sandy', 'Meeka', 'Nya', 'Sammy', 'Denny', 'Ken', 'Hayes', 'Reema']
+
+      let currentName = ''
+
+      const getRandomName = () => {
+        const unused = names.filter(n => currentName !== n)
+        return unused[Math.floor(Math.random() * unused.length)]
+      }
+
+      // example of accessing a react ref externally
+      const resetCountBtn = document.getElementById('resetCountBtn')
+      resetCountBtn.addEventListener('click', () => {
+        // calls internal methods of react component exposed through ref
+        bkTest.ref.current.resetCount()
+      })
+
+      // example of modifying attribute dynamically
+      const changeNameBtn = document.getElementById('changeNameBtn')
+      changeNameBtn.addEventListener('click', () => {
+        bkTest.setAttribute('name', getRandomName())
+      })
+      const changeNameBtn2 = document.getElementById('changeNameBtn2')
+      changeNameBtn2.addEventListener('click', () => {
+        bkTest2.setAttribute('name', getRandomName())
+      })
+
+      // callback example with payload
+      bkTest.addEventListener('counterClick', (evt) => {
+        // evt.detail contains the payload (per web component specification)
+        console.log('counterClick event', evt.detail)
+      })
+      bkTest.addEventListener('counterChange', (evt) => {
+        // evt.detail contains the payload (per web component specification)
+        console.log('counterChange event', evt.detail)
+      })
+
+        // example of accessing a react ref externally
+        const resetCountBtn2 = document.getElementById('resetCountBtn2')
+        resetCountBtn2.addEventListener('click', () => {
+          // calls internal methods of react component exposed through ref
+          bkTest2.ref.current.resetCount()
+        })
+    </script>
+  </body>
+</html>
